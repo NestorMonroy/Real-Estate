@@ -21,10 +21,7 @@ const ListingForm = (props) => {
 
     const [loading, setLoading] = useState(false);
 
-    const onChange = e => setFormData({ 
-                            ...formData, 
-                            [e.target.name]: e.target.value 
-                        });
+    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
     const onSubmit = e => {
         e.preventDefault();
@@ -36,7 +33,7 @@ const ListingForm = (props) => {
         };
 
         setLoading(true);
-        axios.post(`http://127.0.0.1:8000/api/listings/search`, { sale_type, price, bedrooms, home_type, bathrooms, sqft, days_listed, has_photos, open_house, keywords }, config)
+        axios.post(`${process.env.REACT_APP_API_URL}/api/listings/search`, { sale_type, price, bedrooms, home_type, bathrooms, sqft, days_listed, has_photos, open_house, keywords }, config)
         .then(res => {
             setLoading(false);
             props.setListings(res.data);

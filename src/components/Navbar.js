@@ -5,7 +5,7 @@ import { logout } from '../actions/auth';
 import Alert from './Alert';
 import PropTypes from 'prop-types';
 
-const navBar = ({ auth: { isAuthenticated, loading }, logout }) => {
+const navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     const authLinks = (
         <a className='navbar__top__auth__link' onClick={logout} href='#!'>Logout</a>
     );
@@ -25,7 +25,7 @@ const navBar = ({ auth: { isAuthenticated, loading }, logout }) => {
                         <Link className='navbar__top__logo__link' to='/'>Realest Estate</Link>
                     </div>
                     <div className='navbar__top__auth'>
-                        {!loading && (<Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>)}
+                        { !loading && (<Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
                     </div>
                 </div>
                 <div className='navbar__bottom'>
@@ -48,8 +48,7 @@ const navBar = ({ auth: { isAuthenticated, loading }, logout }) => {
     );
 };
 
-
-navBar.propTypes = {
+navbar.propTypes = {
     logout: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 }
@@ -58,4 +57,4 @@ const mapStateToProps = state => ({
     auth: state.auth
 });
 
-export default connect(mapStateToProps, { logout })(navBar);
+export default connect(mapStateToProps, { logout })(navbar);

@@ -8,7 +8,7 @@ const card = (props) => {
     };
 
     return (
-        <div className='card'>
+        <div className='card' >
             <h3 className='card__title'>{props.title}</h3>
             <div className='card__header'>
                 <img className='card__header__photo' src={props.photo_main} alt='House' />

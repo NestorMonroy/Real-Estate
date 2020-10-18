@@ -21,14 +21,14 @@ const ListingDetail = (props) => {
             }
         };
 
-        axios.get(`http://127.0.0.1:8000/api/listings/${slug}`, config)
-            .then(res => {
-                setListing(res.data);
-                setPrice(numberWithCommas(res.data.price));
-            })
-            .catch(err => {
+        axios.get(`${process.env.REACT_APP_API_URL}/api/listings/${slug}`, config)
+        .then(res => {
+            setListing(res.data);
+            setPrice(numberWithCommas(res.data.price));
+        })
+        .catch(err => {
 
-            });
+        });
     }, [props.match.params.id]);
 
     useEffect(() => {
@@ -41,13 +41,13 @@ const ListingDetail = (props) => {
         };
 
         if (id) {
-            axios.get(`http://127.0.0.1:8000/api/realtors/${id}`, config)
-                .then(res => {
-                    setRealtor(res.data);
-                })
-                .catch(err => {
+            axios.get(`${process.env.REACT_APP_API_URL}/api/realtors/${id}`, config)
+            .then(res => {
+                setRealtor(res.data);
+            })
+            .catch(err => {
 
-                });
+            });
         }
     }, [listing.realtor]);
 

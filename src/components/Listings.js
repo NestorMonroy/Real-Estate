@@ -27,7 +27,7 @@ const listings = ({ listings }) => {
 
         for (let i = 0; i < listings.length; i += 3) {
             result.push(
-                <div className='row'>
+                <div className='row' key={i}>
                     <div className='col-1-of-3'>
                         {listingsOnPage[i]}
                     </div>

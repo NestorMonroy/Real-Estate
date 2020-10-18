@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-
 import { setAlert } from '../actions/alert';
 import { signup } from '../actions/auth';
 import PropTypes from 'prop-types';
