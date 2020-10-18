@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    
     'corsheaders',
     'rest_framework',
 
@@ -89,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'realest_state',
         'USER': 'postgres',
-        'PASSWORD': 'Azul1990',
+        'PASSWORD': '',
         'HOST': 'localhost'
     }
 }
@@ -163,6 +163,6 @@ AUTH_USER_MODEL = 'accounts.UserAccount'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'prueba.cursos.1990@gmail.com'
-EMAIL_HOST_PASSWORD = 'jvtaoibmghnbhmys'
+EMAIL_HOST_USER = 'tucorreo@gmail.com'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
